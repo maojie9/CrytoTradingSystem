@@ -33,7 +33,7 @@ public class Order {
     @Column(nullable = false)
     private BigDecimal price;
 
-    private LocalDateTime localDateTime = LocalDateTime.now();
+    private LocalDateTime timeStamp = LocalDateTime.now();
 
     @Column(nullable = false)
     private OrderStatus status;

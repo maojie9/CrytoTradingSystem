@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.maojie.trading.model.Order;
 import com.maojie.trading.model.Wallet;
+import com.maojie.trading.service.OrderService;
 import com.maojie.trading.service.WalletService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,13 +21,16 @@ public class WalletController {
     @Autowired
     private WalletService walletService;
 
+    @Autowired
+    private OrderService orderService;
+
     @GetMapping("/api/wallet")
     public ResponseEntity<Wallet> getUserWallet() {
         Wallet wallet = walletService.getUserWallet();
         return new ResponseEntity<>(wallet, HttpStatus.ACCEPTED);
     }
 
-    /* 
+    
     @GetMapping("/api/wallet/order/{orderId}/pay")
     public ResponseEntity<Wallet> payOrderPayment(@PathVariable Long orderId) throws Exception {
         Order order = orderService.getOrderById(orderId);
@@ -34,11 +38,7 @@ public class WalletController {
         Wallet wallet = walletService.payOrderPayment(order);
         return new ResponseEntity<>(wallet, HttpStatus.ACCEPTED);
     }
-    */
-
-
     
-
 
 
 }
