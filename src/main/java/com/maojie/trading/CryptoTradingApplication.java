@@ -32,6 +32,7 @@ public class CryptoTradingApplication {
 		SpringApplication.run(CryptoTradingApplication.class, args);
 	}
 
+	// ASSIGNMENT TASK 1
 	@Scheduled(fixedRate = 10000)
     public void updateCoinPrice() {
 

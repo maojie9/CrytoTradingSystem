@@ -34,9 +34,9 @@ public class OrderController {
     //@Autowired
     //private WalletTransactionService WalletTransactionService;
     
+    // ASSSIGNMENT TASK 3
     @PostMapping("/pay")
     public ResponseEntity<Order> payOrderPayment(@RequestBody CreateOrderRequest req) throws Exception {
-
         Coin coin = coinService.findBySymbol(req.getSymbol());
 
         Order order = orderService.processOrder(coin, req.getQuantity(), req.getOrderType());
@@ -51,6 +51,7 @@ public class OrderController {
         return ResponseEntity.ok(order);
     }
 
+    // ASSIGNMENT TASK 5
     @GetMapping()
     public ResponseEntity<List<Order>> getAllOrder(@RequestParam(required = false) OrderType order_type, @RequestParam(required = false) String asset_symbol) {
         List<Order> orders = orderService.getAllOrder(order_type, asset_symbol);

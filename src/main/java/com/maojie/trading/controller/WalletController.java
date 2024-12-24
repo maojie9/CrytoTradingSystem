@@ -3,7 +3,6 @@ package com.maojie.trading.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.maojie.trading.model.Order;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/api/wallet")
 public class WalletController {
 
     @Autowired
@@ -24,6 +22,7 @@ public class WalletController {
     @Autowired
     private OrderService orderService;
 
+    // ASSIGNMENT TASK 4
     @GetMapping("/api/wallet")
     public ResponseEntity<Wallet> getUserWallet() {
         Wallet wallet = walletService.getUserWallet();

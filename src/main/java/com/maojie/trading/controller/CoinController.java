@@ -23,6 +23,7 @@ public class CoinController {
     @Autowired
     ObjectMapper objectMapper;
 
+    // ASSIGNMENT TASK 2
     @GetMapping
     ResponseEntity<List<Coin>>updateLatestCoinPriceFromSource() throws Exception{
         List<Coin> coins = coinService.updateLatestCoinPriceFromSource();
