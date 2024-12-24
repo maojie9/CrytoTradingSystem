@@ -16,7 +16,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.Data;
 
-@Entity
+@Entity(name = "Orders")
 @Data
 public class Order {
 
