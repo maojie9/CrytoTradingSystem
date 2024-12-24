@@ -20,7 +20,7 @@ public class WalletServiceImpl implements WalletService{
     @Override
     public Wallet getUserWallet() {
         List<Wallet> walletList = walletRepository.findAll();
-        return (walletList.size()==1)?walletList.get(0):null;
+        return (walletList.size()>0)?walletList.get(0):null;
     }
 
     @Override
